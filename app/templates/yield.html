@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Yield Prediction - Agro-Vision AI{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+        <h2 class="fw-bold text-success mb-2" data-i18n="yield_title">Crop Yield Prediction</h2>
+        <p class="text-muted small" data-i18n="yield_subtitle">Enter farm parameters to calculate projected yield in metric tons.</p>
+        <div class="card border-0 shadow-sm p-4 rounded-3 mb-3">
+            <form id="yieldForm">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold" data-i18n="lbl_crop">Crop Name</label>
+                    <input type="text" name="crop" class="form-control tap-target" placeholder="e.g. Rice, Maize, Wheat" required>
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-6"><label class="form-label small">Rainfall (mm)</label><input type="number" step="any" name="rainfall" class="form-control" value="200" required></div>
+                    <div class="col-6"><label class="form-label small">Temperature (°C)</label><input type="number" step="any" name="temperature" class="form-control" value="26" required></div>
+                    <div class="col-6"><label class="form-label small">Humidity (%)</label><input type="number" step="any" name="humidity" class="form-control" value="80" required></div>
+                    <div class="col-6"><label class="form-label small">Soil pH</label><input type="number" step="any" name="soil_ph" class="form-control" value="6.5" required></div>
+                    <div class="col-4"><label class="form-label small">N (kg/ha)</label><input type="number" step="any" name="nitrogen" class="form-control" value="90" required></div>
+                    <div class="col-4"><label class="form-label small">P (kg/ha)</label><input type="number" step="any" name="phosphorus" class="form-control" value="42" required></div>
+                    <div class="col-4"><label class="form-label small">K (kg/ha)</label><input type="number" step="any" name="potassium" class="form-control" value="43" required></div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold" data-i18n="lbl_area">Cultivation Area (Hectares)</label>
+                    <input type="number" step="any" name="area" class="form-control tap-target" value="1.0" required>
+                </div>
+                <button type="submit" class="btn btn-primary fw-bold tap-target w-100" data-i18n="btn_predict_yield">Calculate Yield</button>
+            </form>
+        </div>
+        <div id="yieldResultArea"></div>
+    </div>
+</div>
+{% endblock %}

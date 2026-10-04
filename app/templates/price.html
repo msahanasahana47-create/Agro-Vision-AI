@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Mandi Price Forecast - Agro-Vision AI{% endblock %}
+{% block head_extra %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+        <h2 class="fw-bold text-success mb-2" data-i18n="price_title">Mandi Price Forecasting</h2>
+        <p class="text-muted small" data-i18n="price_subtitle">7-day price forecasting and 30-day historical Mandi prices.</p>
+        <div class="card border-0 shadow-sm p-4 rounded-3 mb-3">
+            <div class="mb-3">
+                <label class="form-label fw-semibold" data-i18n="lbl_select_crop">Select Mandi Crop</label>
+                <select id="priceCropSelect" class="form-select tap-target">
+                    {% for c in supported_crops %}
+                    <option value="{{ c|lower }}">{{ c }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button id="fetchPriceBtn" class="btn btn-warning text-dark fw-bold tap-target w-100" data-i18n="btn_fetch_forecast">Load 7-Day Forecast</button>
+        </div>
+        <div id="priceChartContainer" class="card border-0 shadow-sm p-3 rounded-3 d-none">
+            <canvas id="priceChart" height="200"></canvas>
+            <div id="priceMetricsNote" class="mt-2 text-muted small"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

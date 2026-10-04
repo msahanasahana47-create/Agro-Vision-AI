@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Disease Scan - Agro-Vision AI{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+        <h2 class="fw-bold text-success mb-2" data-i18n="disease_title">Leaf Disease Scanner</h2>
+        <p class="text-muted small" data-i18n="disease_subtitle">Upload or take a photo of an affected leaf.</p>
+        <div class="card border-0 shadow-sm p-3 rounded-3 mb-3">
+            <input type="file" id="leafImageInput" accept="image/*" capture="environment" class="form-control mb-3 tap-target">
+            <button id="scanBtn" class="btn btn-success fw-bold tap-target w-100" data-i18n="btn_analyze_leaf">Analyze Leaf</button>
+        </div>
+        <div id="diseaseResultArea"></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Model Registry & Metrics - Agro-Vision AI{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+        <h2 class="fw-bold text-success mb-2" data-i18n="info_title">Model Architecture & Verification</h2>
+        <p class="text-muted small" data-i18n="info_subtitle">Auditable record of ML model weights, metrics, dataset provenance, and versioning.</p>
+        
+        <div class="row g-3">
+            {% for name, meta in models.items() %}
+            <div class="col-12 col-md-6">
+                <div class="card border-0 shadow-sm rounded-3 h-100 p-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold text-dark mb-0">{{ name|capitalize }} Model</h5>
+                            <span class="badge {% if meta.status == 'trained' %}bg-success{% else %}bg-secondary{% endif %}">
+                                {{ meta.version or 'v1.0' }}
+                            </span>
+                        </div>
+                        <p class="text-muted small mb-2"><strong>Dataset:</strong> {{ meta.dataset or 'Raw dataset in ml/data/raw/' }}</p>
+                        <p class="text-muted small mb-2"><strong>Last Trained:</strong> {{ meta.last_trained or 'Pending' }}</p>
+                        <div class="bg-light p-2 rounded small text-secondary">
+                            <code>{{ meta.metrics | tojson(indent=2) }}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

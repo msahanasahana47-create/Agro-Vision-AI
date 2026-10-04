@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login - Agro-Vision AI{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-5">
+        <div class="card border-0 shadow-sm p-4 rounded-4 my-4">
+            <h3 class="fw-bold text-success text-center mb-3" data-i18n="login_title">Farmer Login</h3>
+            <form method="POST" action="{{ url_for('auth.login') }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold" data-i18n="lbl_email">Email Address</label>
+                    <input type="email" name="email" class="form-control tap-target" placeholder="farmer@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold" data-i18n="lbl_password">Password</label>
+                    <input type="password" name="password" class="form-control tap-target" required>
+                </div>
+                <button type="submit" class="btn btn-success fw-bold tap-target w-100 mb-3" data-i18n="btn_login">Login</button>
+            </form>
+            <div class="text-center small text-muted">
+                Don't have an account? <a href="{{ url_for('auth.register') }}" class="text-success fw-semibold">Register here</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

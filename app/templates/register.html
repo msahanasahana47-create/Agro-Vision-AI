@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Register - Agro-Vision AI{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-5">
+        <div class="card border-0 shadow-sm p-4 rounded-4 my-4">
+            <h3 class="fw-bold text-success text-center mb-3" data-i18n="register_title">Register Account</h3>
+            <form method="POST" action="{{ url_for('auth.register') }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold" data-i18n="lbl_name">Full Name</label>
+                    <input type="text" name="name" class="form-control tap-target" placeholder="Ramesh Kumar" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold" data-i18n="lbl_email">Email Address</label>
+                    <input type="email" name="email" class="form-control tap-target" placeholder="farmer@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold" data-i18n="lbl_password">Password</label>
+                    <input type="password" name="password" class="form-control tap-target" minlength="6" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-semibold" data-i18n="lbl_pref_lang">Preferred Language</label>
+                    <select name="language" class="form-select tap-target">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी (Hindi)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success fw-bold tap-target w-100 mb-3" data-i18n="btn_register">Register</button>
+            </form>
+            <div class="text-center small text-muted">
+                Already registered? <a href="{{ url_for('auth.login') }}" class="text-success fw-semibold">Login here</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

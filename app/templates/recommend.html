@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Crop Recommendation - Agro-Vision AI{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+        <h2 class="fw-bold text-success mb-2" data-i18n="rec_title">Crop Recommendation</h2>
+        <p class="text-muted small" data-i18n="rec_subtitle">Discover the top crops best suited for your soil nutrients and climate.</p>
+        <div class="card border-0 shadow-sm p-4 rounded-3 mb-3">
+            <form id="recommendForm">
+                <div class="row g-2 mb-3">
+                    <div class="col-4"><label class="form-label small">Nitrogen (N)</label><input type="number" step="any" name="nitrogen" class="form-control" value="90" required></div>
+                    <div class="col-4"><label class="form-label small">Phosphorus (P)</label><input type="number" step="any" name="phosphorus" class="form-control" value="42" required></div>
+                    <div class="col-4"><label class="form-label small">Potassium (K)</label><input type="number" step="any" name="potassium" class="form-control" value="43" required></div>
+                    <div class="col-6"><label class="form-label small">Temperature (°C)</label><input type="number" step="any" name="temperature" class="form-control" value="25" required></div>
+                    <div class="col-6"><label class="form-label small">Humidity (%)</label><input type="number" step="any" name="humidity" class="form-control" value="82" required></div>
+                    <div class="col-6"><label class="form-label small">Soil pH</label><input type="number" step="any" name="ph" class="form-control" value="6.5" required></div>
+                    <div class="col-6"><label class="form-label small">Rainfall (mm)</label><input type="number" step="any" name="rainfall" class="form-control" value="202" required></div>
+                </div>
+                <button type="submit" class="btn btn-success fw-bold tap-target w-100" data-i18n="btn_get_recommendations">Find Recommended Crops</button>
+            </form>
+        </div>
+        <div id="recResultArea"></div>
+    </div>
+</div>
+{% endblock %}
