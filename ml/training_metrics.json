@@ -1,0 +1,19 @@
+{
+  "val_accuracy": 0.9966,
+  "val_loss": 0.0102,
+  "total_images": 20638,
+  "healthy_images": 3221,
+  "diseased_images": 17417,
+  "classes": [
+    "Diseased",
+    "Healthy"
+  ],
+  "epochs_head": 10,
+  "epochs_ft": 10,
+  "training_time_sec": 21052.6,
+  "model_type": "MobileNetV2-binary",
+  "img_size": [
+    224,
+    224
+  ]
+}

@@ -2,6 +2,8 @@
 
 Agro-Vision AI is a production-grade multimodal decision support platform built for farmers. It combines deep learning computer vision, tabular machine learning, and time-series forecasting with an integrated agronomic advisor in a mobile-first interface.
 
+> 🤖 **Working with Google Antigravity on another machine?** See the [Antigravity Device Setup Guide](README_ANTIGRAVITY.md).
+
 ---
 
 ## Features

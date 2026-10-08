@@ -4,7 +4,7 @@ from typing import Dict, Any, List
 from datetime import datetime, timedelta, timezone
 
 _PRICE_MODELS = {}
-SUPPORTED_CROPS = ["rice", "wheat", "maize", "cotton", "potato", "onion", "tomato"]
+SUPPORTED_CROPS = ["rice", "wheat", "maize", "cotton", "potato", "onion", "tomato", "soybean", "sugarcane", "barley", "mustard", "garlic", "ginger", "cabbage", "spinach", "apple", "banana"]
 
 
 def init_price_models(artifacts_dir: Path) -> None:

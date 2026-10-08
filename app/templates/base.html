@@ -22,11 +22,6 @@
                 <span>Agro-Vision AI</span>
             </a>
             <div class="d-flex align-items-center gap-2">
-                <!-- Language Switcher -->
-                <select id="langSelector" class="form-select form-select-sm language-switch" aria-label="Select Language">
-                    <option value="en" {% if current_language == 'en' %}selected{% endif %}>English</option>
-                    <option value="hi" {% if current_language == 'hi' %}selected{% endif %}>हिंदी (Hindi)</option>
-                </select>
                 <button class="navbar-toggler p-2 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,11 +52,6 @@
                     <li class="nav-item">
                         <a class="nav-link py-2" href="{{ url_for('price.price_page') }}" data-i18n="nav_price">
                             <i class="bi bi-cash-coin me-1"></i> Mandi Prices
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link py-2" href="{{ url_for('info.models_page') }}" data-i18n="nav_models">
-                            <i class="bi bi-cpu me-1"></i> Model Info
                         </a>
                     </li>
                 </ul>
