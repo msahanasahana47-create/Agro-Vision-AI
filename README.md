@@ -16,7 +16,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Platform-Web%20%7C%20Mobile--First-orange?style=flat-square"/>
-  <img src="https://img.shields.io/badge/i18n-English%20%7C%20Hindi-purple?style=flat-square"/>
 </p>
 
 ---
